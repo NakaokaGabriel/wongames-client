@@ -8,6 +8,8 @@ import Logo from 'components/Logo'
 
 import * as S from './styles'
 
+import Button from 'components/Button'
+
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -32,6 +34,23 @@ const Menu = () => {
 
       <S.MenuFull isOpen={isOpen} aria-hidden={!isOpen}>
         <CloseIcon aria-label="Close Menu" onClick={() => setIsOpen(false)} />
+
+        <S.MenuNav>
+          <S.MenuLink href="#">Home</S.MenuLink>
+          <S.MenuLink href="#">Explore</S.MenuLink>
+        </S.MenuNav>
+
+        <S.RegisterBox>
+          <Button fullWidth size="large">
+            Log in now
+          </Button>
+
+          <span>Or</span>
+
+          <S.CreateAccount href="#" title="Sign Up">
+            Sign Up
+          </S.CreateAccount>
+        </S.RegisterBox>
       </S.MenuFull>
     </S.Wrapper>
   )
