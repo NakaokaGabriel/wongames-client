@@ -9,19 +9,33 @@ import Logo from 'components/Logo'
 import * as S from './styles'
 
 import Button from 'components/Button'
+import MediaMatch from 'components/MediaMatch'
 
-const Menu = () => {
+export type MenuProps = {
+  username?: string
+}
+
+const Menu = ({ username }: MenuProps) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
     <S.Wrapper>
-      <S.IconWrapper>
-        <MenuIcon aria-label="Open Menu" onClick={() => setIsOpen(true)} />
-      </S.IconWrapper>
+      <MediaMatch lessThan="medium">
+        <S.IconWrapper>
+          <MenuIcon aria-label="Open Menu" onClick={() => setIsOpen(true)} />
+        </S.IconWrapper>
+      </MediaMatch>
 
       <S.LogoWrapper>
         <Logo hideOnMobile />
       </S.LogoWrapper>
+
+      <MediaMatch greaterThan="medium">
+        <S.MenuNav>
+          <S.MenuLink href="#">Home</S.MenuLink>
+          <S.MenuLink href="#">Explore</S.MenuLink>
+        </S.MenuNav>
+      </MediaMatch>
 
       <S.MenuGroup>
         <S.IconWrapper>
@@ -30,6 +44,12 @@ const Menu = () => {
         <S.IconWrapper>
           <ShoppingCartIcon aria-label="Open Shopping Cart" />
         </S.IconWrapper>
+
+        {!username && (
+          <MediaMatch greaterThan="medium">
+            <Button>Sign in</Button>
+          </MediaMatch>
+        )}
       </S.MenuGroup>
 
       <S.MenuFull isOpen={isOpen} aria-hidden={!isOpen}>
@@ -38,19 +58,28 @@ const Menu = () => {
         <S.MenuNav>
           <S.MenuLink href="#">Home</S.MenuLink>
           <S.MenuLink href="#">Explore</S.MenuLink>
+
+          {!!username && (
+            <>
+              <S.MenuLink href="#">My account</S.MenuLink>
+              <S.MenuLink href="#">WishList</S.MenuLink>
+            </>
+          )}
         </S.MenuNav>
 
-        <S.RegisterBox>
-          <Button fullWidth size="large">
-            Log in now
-          </Button>
+        {!username && (
+          <S.RegisterBox>
+            <Button fullWidth size="large">
+              Log in now
+            </Button>
 
-          <span>Or</span>
+            <span>Or</span>
 
-          <S.CreateAccount href="#" title="Sign Up">
-            Sign Up
-          </S.CreateAccount>
-        </S.RegisterBox>
+            <S.CreateAccount href="#" title="Sign Up">
+              Sign Up
+            </S.CreateAccount>
+          </S.RegisterBox>
+        )}
       </S.MenuFull>
     </S.Wrapper>
   )
