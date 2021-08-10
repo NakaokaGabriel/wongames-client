@@ -6,7 +6,7 @@ import Banner from '.'
 
 describe('<Banner />', () => {
   it('should render correctly', () => {
-    renderWithTheme(
+    const { container } = renderWithTheme(
       <Banner
         img="img test"
         title="Defy death"
@@ -25,5 +25,7 @@ describe('<Banner />', () => {
     ).toBeInTheDocument()
 
     expect(screen.getByRole('img', { name: /defy death/i })).toBeInTheDocument()
+
+    expect(container.firstChild).toMatchSnapshot()
   })
 })
