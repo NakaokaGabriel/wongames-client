@@ -11,6 +11,14 @@ export default {
     img: '/img/red-dead-img.jpg',
     price: '$215,00',
     promotionalPrice: 'R$ 200,00'
+  },
+  argTypes: {
+    onFav: { action: 'clicked' }
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dark'
+    }
   }
 } as Meta
 
