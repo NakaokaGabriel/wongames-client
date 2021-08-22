@@ -21,21 +21,23 @@ const GameCard = ({ title, developer, img, price }: GameCardProps) => (
       <Image src={img} alt={title} layout="fill" />
     </S.ImageBox>
 
-    <S.Info>
-      <S.Title>{title}</S.Title>
+    <S.Content>
+      <S.Info>
+        <S.Title>{title}</S.Title>
 
-      <S.Developer>{developer}</S.Developer>
-    </S.Info>
+        <S.Developer>{developer}</S.Developer>
+      </S.Info>
 
-    <S.FavButton role="button">
-      <FavoriteBorder aria-label="Add to widhlist" />
-    </S.FavButton>
+      <S.FavButton role="button">
+        <FavoriteBorder aria-label="Add to widhlist" />
+      </S.FavButton>
 
-    <S.BuyBox>
-      <S.Price>{price}</S.Price>
+      <S.BuyBox>
+        <S.Price>{price}</S.Price>
 
-      <Button icon={<AddShoppingCart />} size="small" />
-    </S.BuyBox>
+        <Button icon={<AddShoppingCart />} size="small" />
+      </S.BuyBox>
+    </S.Content>
   </S.Wrapper>
 )
 
