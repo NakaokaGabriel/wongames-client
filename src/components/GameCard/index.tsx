@@ -1,4 +1,4 @@
-import Image from 'next/image'
+// import Image from 'next/image'
 import {
   FavoriteBorder,
   AddShoppingCart,
@@ -37,7 +37,8 @@ const GameCard = ({
 }: GameCardProps) => (
   <S.Wrapper>
     <S.ImageBox>
-      <Image src={img} alt={title} layout="fill" />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={img} alt={title} />
     </S.ImageBox>
 
     {!!ribbon && (
