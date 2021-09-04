@@ -10,13 +10,13 @@ import Home from '.'
 
 const props = {
   banners: bannersMock,
-  newGames: gamesMock,
+  newGames: [gamesMock[0]],
   mostPopularHighligth: highlightMock,
-  mostPopularGames: gamesMock,
-  upcommingGames: gamesMock,
+  mostPopularGames: [gamesMock[0]],
+  upcommingGames: [gamesMock[0]],
   upcommingHighligth: highlightMock,
-  upcommingMoreGames: gamesMock,
-  freeGames: gamesMock,
+  upcommingMoreGames: [gamesMock[0]],
+  freeGames: [gamesMock[0]],
   freeHighligth: highlightMock
 }
 
@@ -28,10 +28,6 @@ describe('<Home />', () => {
     expect(
       screen.getByRole('heading', { name: /contact us/i })
     ).toBeInTheDocument()
-  })
-
-  it('should render sections', () => {
-    renderWithTheme(<Home {...props} />)
 
     expect(screen.getByRole('heading', { name: /News/i })).toBeInTheDocument()
     expect(
@@ -43,13 +39,9 @@ describe('<Home />', () => {
     expect(
       screen.getByRole('heading', { name: /free games/i })
     ).toBeInTheDocument()
-  })
-
-  it('should render sections elements', () => {
-    renderWithTheme(<Home {...props} />)
 
     expect(screen.getAllByText(/defy death 1/i)).toHaveLength(1)
-    expect(screen.getAllByText(/population zero/i)).toHaveLength(20)
-    // expect(screen.getAllByText(/read dead is back!/i)).toHaveLength(3)
+    expect(screen.getAllByText(/population zero/i)).toHaveLength(5)
+    expect(screen.getAllByText(/Read Dead it’s back/i)).toHaveLength(3)
   })
 })
