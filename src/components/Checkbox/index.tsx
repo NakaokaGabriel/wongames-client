@@ -4,6 +4,7 @@ import * as S from './styles'
 
 export type CheckboxProps = {
   onCheck?: (status: boolean) => void
+  isChecked?: boolean
   label?: string
   labelFor?: string
   labelColor?: 'white' | 'black'
@@ -11,11 +12,12 @@ export type CheckboxProps = {
 
 const Checkbox = ({
   onCheck,
+  isChecked = false,
   label,
   labelFor = '',
   labelColor = 'white'
 }: CheckboxProps) => {
-  const [checked, setChecked] = useState(false)
+  const [checked, setChecked] = useState(isChecked)
 
   const onChange = () => {
     const status = !checked
