@@ -5,6 +5,12 @@ import Checkbox, { CheckboxProps } from '.'
 export default {
   title: 'Checkbox',
   component: Checkbox,
+  parameters: {
+    layout: 'fullscreen',
+    backgrounds: {
+      default: 'won-dark'
+    }
+  },
   argTypes: {
     onCheck: {
       action: 'checked'
@@ -13,5 +19,15 @@ export default {
 } as Meta
 
 export const Default: Story<CheckboxProps> = (args) => (
-  <Checkbox isChecked {...args} />
+  <>
+    <div style={{ padding: 20 }}>
+      <Checkbox
+        isChecked
+        name="category"
+        label="Action"
+        labelFor="action"
+        {...args}
+      />
+    </div>
+  </>
 )
