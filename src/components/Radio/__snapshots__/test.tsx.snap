@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Radio /> should render the radio label 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 0.2rem solid #F231A5;
+  border-radius: 100%;
+  -webkit-transition: background border 0.1s ease-in-out;
+  transition: background border 0.1s ease-in-out;
+  position: relative;
+  outline: none;
+}
+
+.c1:before {
+  content: '';
+  width: 0.8rem;
+  height: 0.8rem;
+  background: #F231A5;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%,-50%,0);
+  -ms-transform: translate3d(-50%,-50%,0);
+  transform: translate3d(-50%,-50%,0);
+  opacity: 0;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.c1:focus {
+  box-shadow: 0 0 0.5rem #F231A5;
+}
+
+.c1:checked:before {
+  opacity: 1;
+}
+
+.c2 {
+  color: #FAFAFA;
+  cursor: pointer;
+  padding-left: 0.8rem;
+  line-height: 1.8rem;
+}
+
+<div
+  class="c0"
+>
+  <input
+    class="c1"
+    id="radioLabel"
+    name="radioLabel"
+    type="radio"
+    value=""
+  />
+  <label
+    class="c2"
+    for="radioLabel"
+  >
+    radio label
+  </label>
+</div>
+`

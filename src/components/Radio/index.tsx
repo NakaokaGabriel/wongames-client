@@ -4,7 +4,7 @@ import * as S from './styles'
 type RadioValue = string | ReadonlyArray<string> | number
 
 export type RadioProps = {
-  onCheck?: (value: RadioValue) => void
+  onCheck?: (value?: RadioValue) => void
   label?: string
   labelFor?: string
   labelColor?: 'white' | 'black'
@@ -12,24 +12,32 @@ export type RadioProps = {
 } & InputHTMLAttributes<HTMLInputElement>
 
 const Radio = ({
+  onCheck,
   label,
   labelFor = '',
   labelColor = 'white',
   value,
   ...props
-}: RadioProps) => (
-  <S.Wrapper>
-    <S.Input
-      type="radio"
-      name={labelFor}
-      id={labelFor}
-      value={value}
-      {...props}
-    />
-    <S.Label htmlFor={labelFor} labelColor={labelColor}>
-      {label}
-    </S.Label>
-  </S.Wrapper>
-)
+}: RadioProps) => {
+  const onChange = () => {
+    !!onCheck && onCheck(value)
+  }
+
+  return (
+    <S.Wrapper>
+      <S.Input
+        type="radio"
+        name={labelFor}
+        id={labelFor}
+        value={value}
+        onChange={onChange}
+        {...props}
+      />
+      <S.Label htmlFor={labelFor} labelColor={labelColor}>
+        {label}
+      </S.Label>
+    </S.Wrapper>
+  )
+}
 
 export default Radio

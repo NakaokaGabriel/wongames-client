@@ -10,16 +10,44 @@ export default {
     backgrounds: {
       default: 'won-dark'
     }
+  },
+  argTypes: {
+    onCheck: { action: 'checked' }
   }
 } as Meta
 
 export const Default: Story<RadioProps> = (props) => (
   <>
     <div style={{ margin: 10 }}>
-      <Radio {...props} />
+      <Radio
+        {...props}
+        label="primeiro"
+        labelFor="primeiro"
+        id="primeiro"
+        name="nome"
+        value="primeiro"
+        defaultChecked
+      />
     </div>
     <div style={{ margin: 10 }}>
-      <Radio {...props} />
+      <Radio
+        {...props}
+        label="segundo"
+        labelFor="segundo"
+        id="segundo"
+        name="nome"
+        value="segundo"
+      />
+    </div>
+    <div style={{ margin: 10 }}>
+      <Radio
+        {...props}
+        label="terceiro"
+        labelFor="terceiro"
+        id="terceiro"
+        name="nome"
+        value="terceiro"
+      />
     </div>
   </>
 )
