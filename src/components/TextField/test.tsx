@@ -1,5 +1,6 @@
 import { screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { Email } from '@styled-icons/material/Email'
 
 import { renderWithTheme } from 'utils/tests/helpers'
 
@@ -55,5 +56,11 @@ describe('<TextField />', () => {
     userEvent.tab()
 
     expect(input).toHaveFocus
+  })
+
+  it('should render with an icon version', async () => {
+    renderWithTheme(<TextField icon={<Email data-testid="icon" />} />)
+
+    expect(screen.getByTestId(/icon/i)).toBeInTheDocument()
   })
 })
