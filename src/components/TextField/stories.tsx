@@ -35,3 +35,17 @@ withIcon.args = {
   placeholder: 'Email',
   icon: <Email />
 }
+
+export const withError: Story<TextFieldProps> = (args) => (
+  <div style={{ maxWidth: 300, padding: 15 }}>
+    <TextField {...args} />
+  </div>
+)
+
+withError.args = {
+  label: 'alou',
+  initialValue: 'teste',
+  placeholder: 'Email',
+  icon: <Email />,
+  error: 'Message error here'
+}

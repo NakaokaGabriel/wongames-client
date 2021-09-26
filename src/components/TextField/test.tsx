@@ -115,4 +115,18 @@ describe('<TextField />', () => {
 
     expect(input).not.toHaveFocus()
   })
+
+  it('Render with error', async () => {
+    renderWithTheme(
+      <TextField
+        icon={<Email data-testid="icon" />}
+        label="Label"
+        labelFor="Field"
+        id="Field"
+        error="Error message"
+      />
+    )
+
+    expect(screen.getByText('Error message')).toBeInTheDocument()
+  })
 })
