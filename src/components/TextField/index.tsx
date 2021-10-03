@@ -19,7 +19,7 @@ const TextField = ({
   labelFor = '',
   initialValue = '',
   icon,
-  iconPosition,
+  iconPosition = 'left',
   disabled = false,
   error,
   ...props
