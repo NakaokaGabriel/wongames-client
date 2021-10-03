@@ -13,6 +13,12 @@ describe('<Logo />', () => {
     })
   })
 
+  it('should render a logo with id passed', () => {
+    const { container } = renderWithTheme(<Logo id="test" />)
+
+    expect(container.querySelector('#paint_linear_test')).toBeInTheDocument()
+  })
+
   it('should render a black label when color is passed', () => {
     renderWithTheme(<Logo color="black" />)
     expect(screen.getByLabelText(/Won Games/i).parentElement).toHaveStyle({
