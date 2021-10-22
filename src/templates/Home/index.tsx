@@ -63,9 +63,7 @@ const Home = ({
 
         <GameCardSlider items={mostPopularGames} color="white" />
       </S.SectionMostPopular>
-    </Container>
 
-    <Container>
       <S.SectionUpcoming>
         <Heading lineLeft lineColor="secondary">
           Upcoming
